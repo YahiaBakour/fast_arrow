@@ -52,3 +52,17 @@ class Stock(object):
             data = client.get(data["next"])
             results.extend(data["results"])
         return results
+    
+    @classmethod
+    def FetchDataByInstrument(cls,client,InstrumentID):
+        """"
+        fetch data for a stock based on it's instrument ID (Utility)
+        """
+        if("https://" in InstrumentID ):
+            request_url = InstrumentID
+        else:
+            request_url = "https://api.robinhood.com/instruments/"+id+"/"
+
+        data = client.get(request_url)
+        return data
+
