@@ -63,6 +63,6 @@ class Stock(object):
         else:
             request_url = "https://api.robinhood.com/instruments/"+id+"/"
 
-        data = client.get(request_url)
+        data = client.get(request_url,params = None)
         return data
 
